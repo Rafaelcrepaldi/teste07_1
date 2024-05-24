@@ -19,7 +19,7 @@ import java.util.Vector;
 import static org.opencv.core.Core.*;
 import static org.opencv.imgproc.Imgproc.*;
 
-public class Teste extends JFrame {
+public class main extends JFrame {
     private CameraPanel cameraPanel;
     private VideoCapture capture;
     private boolean yellowCrossed = false;
@@ -46,7 +46,7 @@ public class Teste extends JFrame {
     private static final String DB_USER = "aps1";
     private static final String DB_PASSWORD = "1234";
     
-    public Teste() {
+    public main() {
         initComponents();
         yellowCrossingDelayTimer = new Timer(500, (ActionEvent e) -> {
             yellowCrossed = false;
@@ -705,7 +705,7 @@ private String formatTime(long milliseconds) {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
         SwingUtilities.invokeLater(() -> {
-            Teste camera = new Teste();
+            main camera = new main();
             camera.startCamera();
             camera.setVisible(true);
         });
